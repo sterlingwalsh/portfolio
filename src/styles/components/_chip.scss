@@ -1,0 +1,7 @@
+.styled__chip.MuiChip-root {
+	background-color: $cyan;
+	margin: 0.25rem;
+	.MuiChip-deleteIcon {
+		color: rgba($dark, 0.7);
+	}
+}

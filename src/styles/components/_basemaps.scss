@@ -1,0 +1,7 @@
+.basemap__list {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(15rem, 20rem), 1fr));
+	justify-content: space-evenly;
+	gap: 0.5rem;
+}

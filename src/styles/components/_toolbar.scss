@@ -1,0 +1,16 @@
+.styled_toolbar {
+    background-color: rgba(11, 17, 32, 0.9) !important;  
+	padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	& > *:not(:first-child) {
+		margin-left: 0.5rem;
+	}
+}
+
+.styled_toolbar_centered_text {
+    background-color: rgba(11, 17, 32, 0.9) !important;  
+    justify-content: center;
+}

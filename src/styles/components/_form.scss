@@ -1,0 +1,235 @@
+.form__fieldset__container {
+	padding-top: 0.5rem;
+}
+
+.form__fieldset {
+	legend {
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+	}
+	.legend__content {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.form__fieldset {
+		margin-bottom: 0px;
+		margin-inline-end: 0px;
+		margin-inline-start: 0px;
+	}
+	& .MuiInputBase-input {
+		color: $light;
+	}
+
+	&:not(.MuiOutlinedInput-notchedOutline) {
+		background-color: $gray-900;
+		border: 1px dashed $gray-600;
+		border-radius: 2px;
+		margin-bottom: 0.75rem;
+		padding: 1rem 0.75rem;
+
+		&:not(:first-child) {
+			margin-top: 1.25rem;
+		}
+
+		legend {
+			color: $light;
+			font-size: $font-size-base * 0.85;
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			padding-bottom: 0.25rem;
+			padding-left: 0.25rem;
+			text-transform: uppercase;
+			width: auto;
+		}
+
+		input.form-control,
+		select.form-control,
+		select.custom-select {
+			border-color: $gray-600;
+		}
+
+		.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+			border-color: $gray-600;
+		}
+	}
+
+	&.MuiOutlinedInput-notchedOutline {
+		border-color: $gray-600;
+	}
+	.form__fieldset__description {
+		margin-top: -0.5rem;
+		min-width: min-content;
+		max-width: fit-content;
+		margin-bottom: 0.5rem;
+	}
+}
+
+.form__layout {
+	display: flex;
+	flex-direction: column;
+	& > *:not(:last-child()):not(legend) {
+		margin-bottom: 1rem;
+	}
+	.form__caption {
+		margin-top: -1rem;
+	}
+}
+
+.form__panel {
+	background: $gray-900;
+	padding: 1rem;
+	border-radius: 0.25rem;
+	fieldset:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+.form__panel__nopadding {
+	padding: 0;
+}
+
+.multiselect {
+	height: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+// By default the text is rendered inside the handle, so we need to take it out
+// white-space: nowrap; ensures that it doesn't break on a new line, due to the handle being very small
+.layer-scale-slider-tooltip {
+	margin-top: -22px;
+	margin-left: -10px;
+	white-space: nowrap;
+	color: #007bff;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+// Outer div of the text element
+.layer-scale-slider-FlexHandle {
+	display: flex;
+	justify-content: right;
+}
+
+.layer-scale-slider {
+	direction: rtl;
+}
+
+.p-paragraph {
+	text-align: center !important;
+	margin-top: 0;
+	margin-bottom: 2.2rem;
+}
+
+// scale label element
+.layer-scale-slider-label {
+	color: rgba($light, 0.5);
+}
+
+.swatch-display-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+	gap: 2rem;
+}
+
+.swatchSquare {
+	min-height: 2rem;
+	min-width: 2rem;
+}
+
+.swatch-wrapper {
+	// width: 100%;
+	// height: 100%;
+	// display: flex;
+	justify-content: center;
+	&[aria-selected='true'] {
+		background: white;
+	}
+}
+
+.swatchContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 3rem);
+	grid-template-rows: repeat(auto-fill, minmax(2rem, 1fr));
+	gap: 2px;
+	background: white;
+	border: 2px solid white;
+	overflow: hidden;
+	border-radius: 0.5rem;
+
+	cursor: pointer;
+}
+
+.swatchCanvas {
+	height: 100%;
+	width: 100%;
+}
+
+.input__group {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	.input__group {
+		width: 100%;
+	}
+	& .MuiFormControl-root:not(:first-child),
+	.input__group:not(:first-child) {
+		.MuiFilledInput-root {
+			border-left: 1px solid rgba($light, 0.3);
+			border-top-left-radius: 0rem;
+		}
+	}
+	& .MuiFormControl-root:not(:last-child) {
+		.MuiFilledInput-root {
+			border-top-right-radius: 0rem;
+		}
+	}
+	.button__wrapper {
+		.MuiButton-root {
+			min-width: 0px;
+			height: 100%;
+		}
+	}
+
+	& .button__wrapper:not(:first-child) {
+		.MuiButton-root {
+			border-top-left-radius: 0rem;
+			border-bottom-left-radius: 0rem;
+		}
+	}
+	& .button__wrapper:not(:last-child) {
+		.MuiButton-root {
+			border-top-right-radius: 0rem;
+			border-bottom-right-radius: 0rem;
+		}
+	}
+	.MuiFormControl-root + .button__wrapper {
+		.MuiButton-root {
+			border-left: none;
+		}
+	}
+}
+
+.form__caption {
+	color: rgba($light, 0.5);
+	font-size: 0.75rem;
+}
+
+.form__button__row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	& > *:not(:first-child()) {
+		margin-left: 0.5rem;
+	}
+}
+
+.form__button__row_front {
+	display: flex;
+	flex-direction: row;
+	& > *:not(:first-child()) {
+		margin-left: 0.5rem;
+	}
+}

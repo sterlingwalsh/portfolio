@@ -1,0 +1,26 @@
+.esri-time-slider__slider{
+    margin:0px auto;
+    background-color:$dark !important;
+    float:left;
+    padding:10px;
+    border:2px solid $gray-700;
+    box-shadow: 0 0 0 10px $dark inset; 
+}
+
+.time-slider-toggle {
+      position:absolute;
+      bottom: 0rem;
+      left:50%;      
+      &:hover {
+        cursor: pointer;
+      }
+}
+
+.timeOptions {
+    position: absolute;
+    left: 55px;
+    right: 55px;
+    bottom: 30px;
+}
+
+  

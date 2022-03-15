@@ -1,0 +1,68 @@
+@import './variables';
+
+@import './pages/home';
+
+html,
+body,
+#root {
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.hover-accent {
+    position: relative;
+    transform: scale(1);
+    transition: all $transition-duration-short $transition-timing;
+
+    &::before {
+        pointer-events: none;
+        border-radius: 0.25rem;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        content: '';
+        transition: all $transition-duration-short $transition-timing;
+    }
+
+    &::before {
+        box-shadow: $dropshadow;
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        opacity: 1;
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.hover__underline {
+    .hover__underline__target {
+        position: relative;
+        &::after {
+            position: absolute;
+            bottom: 0px;
+            content: '';
+            width: 0%;
+            height: 1px;
+            background-color: currentColor;
+            transition: all $transition-duration $transition-timing;
+            left: 50%;
+        }
+    }
+    &:hover:not(.active__only),
+    &.underline__active,
+    &[aria-selected='true'] {
+        .hover__underline__target {
+            &::after {
+                width: 100%;
+                left: 0%;
+            }
+        }
+    }
+}

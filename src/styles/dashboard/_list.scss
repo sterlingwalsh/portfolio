@@ -1,0 +1,45 @@
+.dashboard__list__item.MuiButtonBase-root {
+	position: relative;
+	overflow: hidden;
+	.MuiListItemIcon-root {
+		color: inherit;
+	}
+	&:hover {
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($white, 0.1);
+		}
+	}
+}
+
+.listItemClicked.MuiButtonBase-root {
+	background-color: rgba($cyan, 0.5);
+	&:hover {
+		background-color: rgba($cyan, 0.5);
+	}
+}
+
+.list-editor-color-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    position: relative;
+}
+.list-editor-icon-wrapper {
+    border: 1px solid #F1F1F1;
+    padding: 3px 5px;
+}
+.list-editor-icon {
+    width: 20px;
+}
+.list-editor-color-modal {
+    position: absolute;
+    right: -70px;
+    top: 135%;
+    z-index: 10;
+}

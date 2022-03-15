@@ -1,0 +1,76 @@
+.alert__message {
+	border-radius: 0.5rem;
+	border: 2px solid $light;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.alert__message__title {
+	margin-bottom: 0;
+}
+
+.alert__message__body {
+	padding-top: 0.5rem;
+}
+
+.alert__message__icon {
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.alert__message__text {
+	padding: 0.5rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: max-content;
+}
+
+.alert__message__info,
+.alert__message__loading {
+	color: $primary;
+	border-color: $primary;
+	.alert__message__icon {
+		color: $light;
+		background-color: $primary;
+	}
+}
+
+.alert__message__danger {
+	color: $danger;
+	border-color: $danger;
+	.alert__message__icon {
+		color: $light;
+		background-color: $danger;
+	}
+}
+
+.alert__message__success {
+	color: $success;
+	border-color: $success;
+	.alert__message__icon {
+		color: $light;
+		background-color: $success;
+	}
+}
+
+.alert__message__warning {
+	color: $warning;
+	border-color: $warning;
+	.alert__message__icon {
+		color: $light;
+		background-color: $warning;
+	}
+}
+
+.alert__backdrop,
+.MuiBackdrop-root.alert__backdrop {
+	z-index: 5000;
+	.alert__message {
+		background: rgba($gray-900, 0.8);
+	}
+}

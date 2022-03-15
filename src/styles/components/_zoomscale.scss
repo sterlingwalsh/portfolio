@@ -1,0 +1,17 @@
+.scalecontainer {
+	position: absolute;
+	top: 1rem;
+	left: 4rem;
+}
+.scale {
+	padding: 0.4rem;
+}
+.scalelabel {
+	margin: 0;
+	margin-bottom: 0.25rem;
+	font-size: 0.75rem;
+	font-weight: bolder;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+}

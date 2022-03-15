@@ -1,0 +1,96 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $dark;
+    height: 100%;
+    color: $white;
+    .home-page__content {
+        width: min(100%, 1200px);
+    }
+    section {
+    }
+
+    main {
+        display: flex;
+        & > * {
+            padding: 0rem 1rem;
+        }
+        aside {
+            max-width: 300px;
+            border-right: 1px solid rgba($white, 0.5);
+        }
+
+        article {
+            display: flex;
+            flex-direction: row;
+            &:not(:first-of-type) {
+                margin-top: 2rem;
+            }
+            img {
+                max-width: 40%;
+            }
+            div {
+                margin-left: 2rem;
+            }
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $light;
+}
+
+.welcome {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    & > * {
+        flex: 1;
+    }
+    align-items: stretch;
+}
+
+.nav__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__nav {
+    position: unset;
+    display: grid;
+    transition: all 1s;
+    flex-basis: 0px;
+    min-height: 0px;
+    max-height: min-content;
+    align-content: center;
+    justify-items: center;
+    flex-grow: 1;
+    width: 0%;
+    grid-template-columns: repeat(var(--nav-count), minmax(0%, calc(100% / var(--nav-count))));
+    grid-template-rows: repeat(var(--nav-count), minmax(0%, min-content));
+}
+
+.nav__item.MuiButton-root {
+    grid-row: var(--gridCell) / calc(var(--gridCell) + 1);
+    grid-column: var(--gridCell) / calc(var(--gridCell) + 1);
+    transition: all 1s;
+    white-space: nowrap;
+    font-size: larger;
+    padding: 1.5rem 2rem;
+}
+
+.nav__pin {
+    flex-grow: 0;
+    width: 100%;
+    height: 0vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}

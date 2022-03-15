@@ -1,0 +1,337 @@
+.tabbed__container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	& .MuiTabs-flexContainer {
+		height: 100%;
+	}
+	& .MuiTabs-indicator {
+		background-color: $blue;
+	}
+}
+
+.tab__header__component.MuiButtonBase-root {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.9rem;
+	transition: all $transition-duration-short $transition-timing;
+	* {
+		transition: all $transition-duration-short $transition-timing;
+	}
+	&.has__close {
+		padding-right: 0rem;
+	}
+	&.Mui-disabled {
+		opacity: 0.4;
+	}
+	& .MuiIconButton-root {
+		padding: 0.75rem;
+	}
+}
+
+.tab__variant__file.tabbed__container__tabs {
+	.tab__header__component.MuiButtonBase-root {
+		padding: 0rem 0.75rem;
+		// border-right: 1px solid rgba($light, 0.2);
+		background-color: rgba($gray-900, 0.9);
+		border-top-left-radius: 0.5rem;
+		border-top-right-radius: 0.5rem;
+		margin: 0rem 0.125rem;
+
+		&:hover:not([aria-selected='true']) {
+			&:not(.tab__collapse__toggle) {
+				margin: 0rem 0.125rem;
+				.tab__header__label {
+					padding: 0.625rem 0rem;
+				}
+			}
+			background-color: rgba($blue, 0.5);
+		}
+
+		&[aria-selected='true'] {
+			background-color: rgba($blue, 0.75);
+			margin: 0rem 0rem;
+			font-size: 1rem;
+			padding: 0rem 1rem;
+			.tab__header__label {
+				padding: 0.625rem 0rem;
+			}
+		}
+
+		&.tab__collapse__toggle {
+			background-color: rgba($blue, 0.5);
+			&:hover {
+				background-color: rgba($blue, 0.75);
+			}
+		}
+	}
+	&.color-invert {
+		> .tabbed__container__tabs {
+			.tab__header__component.MuiButtonBase-root {
+				background-color: rgba($blue, 0.9);
+				&:hover:not([aria-selected='true']) {
+					background-color: rgba($gray-900, 0.5);
+				}
+				&[aria-selected='true'] {
+					background-color: rgba($gray-900, 0.75);
+				}
+			}
+		}
+	}
+}
+
+.tab__variant__simple.tabbed__container__tabs {
+	flex-direction: column;
+	align-items: stretch;
+	padding-top: 0px;
+	width: 100%;
+	position: relative;
+	.tab__scroll__container {
+		width: 100%;
+		.tab__scroll__flip__container {
+			min-width: 100%;
+			height: 100%;
+		}
+	}
+	.tab__header__component.MuiButtonBase-root {
+		padding: 0rem 0.75rem;
+		flex-grow: 1;
+		height: 100%;
+		font-size: 1rem;
+		&:hover {
+			background-color: rgba($light, 0.25);
+		}
+		&::after {
+			content: '';
+			width: 0%;
+			height: 0.125rem;
+			background-color: $cyan;
+			position: absolute;
+			border-top-left-radius: 999px;
+			border-top-right-radius: 999px;
+			bottom: 0;
+			transition: all $transition-duration $transition-timing;
+		}
+		&[aria-selected='true'] {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.tab__header__label {
+	padding: 0.5rem 0rem;
+	white-space: nowrap;
+}
+
+.tab__scroll__container {
+	overflow-x: overlay;
+	flex: 1;
+	display: flex;
+	&::-webkit-scrollbar {
+		width: 1px;
+		height: 1px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba($light, 0);
+		transition: all $transition-duration $transition-timing;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	// For Internet Explorer
+	& {
+		transition: all $transition-duration $transition-timing;
+		scrollbar-face-color: transparent;
+		scrollbar-track-color: transparent;
+	}
+	&:hover {
+		&::-webkit-scrollbar-thumb {
+			background: rgba($light, 1);
+		}
+		& {
+			scrollbar-face-color: rgba($light, 1);
+		}
+	}
+}
+
+.tab__scroll__flip__container {
+	display: flex;
+	flex-wrap: nowrap;
+	width: fit-content;
+	align-items: flex-end;
+}
+
+.tabbed__container__tabs {
+	transition: all $transition-duration $transition-timing;
+	border-bottom: 2px solid rgba($blue, 0.75);
+	flex-grow: 0;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding-top: 0.5rem;
+	height: 3rem;
+	align-items: flex-end;
+	max-height: 100%;
+}
+
+.tabbed__container__display {
+	// height: 0px;
+	overflow: hidden;
+	flex: 1;
+	// flex-grow: 1;
+	// flex-shrink: 1;
+	min-height: 0px;
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	// flex-basis: 0px;
+}
+
+.tabbed__container__display__position {
+	min-width: 100%;
+	overflow: auto;
+	transition: margin-left $transition-duration $transition-timing;
+}
+
+.tabbed__container__current {
+	// min-width: 100%;
+}
+
+.tabbed__container__with__transition {
+}
+
+.tabbed__container__hide__right {
+	margin-left: 100%;
+}
+
+.tabbed__container__hide__left {
+	margin-left: -100%;
+}
+
+.tabbed__container__display__no_padding {
+	> * {
+		padding: 0;
+	}
+}
+
+.tabbed__container__scroll__padding {
+	overflow-y: scroll;
+}
+
+.tabbed__container__display__auto__height {
+	flex-basis: auto;
+}
+
+.tabbed__container__collapsed {
+	padding-top: 0px;
+}
+
+.tab__collapse__toggle {
+	transition: transform $transition-duration $transition-timing;
+	svg {
+		transition: transform $transition-duration $transition-timing;
+	}
+}
+
+.tabs__collapsed {
+	.tab__collapse__toggle {
+		transform: translateY(-100%);
+		z-index: 1500;
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+	&.tabbed__container__tabs {
+		max-height: 0%;
+		padding-top: 0rem;
+		padding-bottom: 0rem;
+		flex: 1;
+	}
+	.tab__collapse__toggle.tab__header__component.MuiButtonBase-root {
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		border-top-left-radius: 0rem;
+		border-top-right-radius: 0rem;
+		flex: 0;
+		&.dark__closed {
+			background-color: rgba($gray-900, 0.5);
+			&:hover {
+				background-color: rgba($gray-900, 0.75);
+			}
+		}
+	}
+}
+
+.bottom__tabs {
+	flex-direction: column-reverse;
+	> .tabbed__container__tabs {
+		border-bottom: none;
+		border-top: 1px solid rgba($blue, 0.75);
+		.tab__scroll__container,
+		.tab__scroll__flip__container {
+			transform: rotate(180deg);
+		}
+		.tab__scroll__container {
+			justify-content: flex-end;
+		}
+		.tab__scroll__flip__container {
+			align-items: flex-start;
+		}
+	}
+
+	> .tab__variant__file.tabbed__container__tabs {
+		align-items: flex-start;
+		padding-bottom: 0.5rem;
+		padding-top: 0rem;
+		& .tab__header__component.MuiButtonBase-root {
+			border-bottom-left-radius: 0.5rem;
+			border-bottom-right-radius: 0.5rem;
+			border-top-left-radius: 0rem;
+			border-top-right-radius: 0rem;
+		}
+	}
+
+	> .tab__variant__simple.tabbed__container__tabs {
+		.tab__header__component {
+			&::after {
+				top: 0px;
+				bottom: unset;
+			}
+		}
+	}
+
+	& .MuiTabs-indicator {
+		bottom: unset;
+		top: 0;
+	}
+
+	> .tabs__collapsed.tabbed__container__tabs {
+		padding-bottom: 0rem;
+		.tab__collapse__toggle.tab__header__component.MuiButtonBase-root {
+			border-bottom-left-radius: 0rem;
+			border-bottom-right-radius: 0rem;
+			border-top-left-radius: 0.5rem;
+			border-top-right-radius: 0.5rem;
+		}
+	}
+}
+
+.tabbed__container .tabbed__container__tabs {
+	.tab__header__component.MuiButtonBase-root.has__close {
+		padding-right: 0rem;
+	}
+}
+
+.tabbed__container__start__adornment {
+	height: 100%;
+	margin: 0rem 0.25rem;
+}

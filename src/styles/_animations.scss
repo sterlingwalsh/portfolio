@@ -1,0 +1,36 @@
+@keyframes blurIn {
+    0% {
+        filter: blur( 7px );
+        background-color: #070928;
+    }
+
+    99% {
+        filter: blur( 0px );
+    }
+
+    100% {
+        filter: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: translateX( -1px ) rotate(0.3deg);
+    }
+
+    66% {
+        transform: translateX( 1px ) rotate(-0.3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

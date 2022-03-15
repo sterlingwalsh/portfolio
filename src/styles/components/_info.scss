@@ -1,0 +1,96 @@
+.info__icon__container {
+	cursor: pointer;
+	// position: relative;
+	display: inline-block;
+	padding: 0rem 0.25rem;
+	line-height: 1;
+}
+
+.info__popper__container {
+	color: $light;
+	background: $gray-900;
+	// border: 1px solid rgba($light, 0.2);
+	box-shadow: $dropshadow;
+	border-radius: 0.25rem;
+	width: 15rem;
+	// overflow: auto;
+}
+
+.info__popper__header {
+	padding: 0.5rem 0.75rem;
+	background: rgba($primary, 0.3);
+	border-bottom: 1px solid rgba($light, 0.2);
+}
+
+.info__popper__content {
+	padding: 0.5rem 0.75rem;
+}
+
+.info__popper {
+	&[x-placement*='bottom'] .info__popper__arrow {
+		top: 0;
+		left: 0;
+		margin-top: -0.9em;
+		width: 3em;
+		height: 1em;
+		&::before {
+			border-width: 0 1em 1em 1em;
+			border-color: transparent transparent $gray-900 transparent;
+		}
+	}
+	&[x-placement*='top'] .info__popper__arrow {
+		bottom: 0;
+		left: 0;
+		margin-bottom: -0.9em;
+		width: 3em;
+		height: 1em;
+		&::before {
+			border-width: 1em 1em 0 1em;
+			border-color: $gray-900 transparent transparent transparent;
+		}
+	}
+	&[x-placement*='right'] .info__popper__arrow {
+		left: 0;
+		margin-left: -0.9em;
+		height: 3em;
+		width: 1em;
+		&::before {
+			border-width: 1em 1em 1em 0;
+			border-color: transparent $gray-900 transparent transparent;
+		}
+	}
+	&[x-placement*='left'] .info__popper__arrow {
+		right: 0;
+		margin-right: -0.9em;
+		height: 3em;
+		width: 1em;
+		&::before {
+			border-width: 1em 0 1em 1em;
+			border-color: transparent transparent transparent $gray-900;
+		}
+	}
+}
+.info__popper__arrow {
+	position: absolute;
+	font-size: 0.5rem;
+	width: 3em;
+	height: 3em;
+	&::before {
+		content: '';
+		margin: auto;
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+	}
+}
+
+.info-image-button {
+	//background-color: $blue;
+	width: 1.25rem;
+	cursor: pointer;
+	height: 1.25rem;
+	display: flex;
+	//justify-content: center;
+	align-items: center;
+}

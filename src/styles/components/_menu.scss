@@ -1,0 +1,58 @@
+.styled__menu.MuiPaper-root,
+.styled__menu .MuiPaper-root {
+	box-shadow: $dropshadow;
+	background-color: $dark;
+	border: 1px solid rgba($light, 0.15);
+	color: $light;
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+
+	.MuiMenuItem-root {
+		line-height: 1;
+	}
+	.MuiMenuItem-root {
+		&:hover {
+			background: rgba($light, 0.1);
+		}
+	}
+	.MuiListSubheader-root {
+		color: $cyan;
+		font-style: italic;
+	}
+	.MuiListSubheader-root ~ .MuiMenuItem-root {
+		padding-left: 2.5rem;
+	}
+	.MuiAutocomplete-noOptions,
+	.MuiAutocomplete-loading {
+		color: rgba($cyan, 0.75);
+	}
+	.MuiAutocomplete-listbox {
+		.MuiAutocomplete-option {
+			&:hover {
+				background: rgba($light, 0.1);
+			}
+		}
+	}
+	[aria-selected='true'] {
+		background-color: rgba($cyan, 0.12);
+	}
+	.MuiListItemIcon-root {
+		color: currentColor;
+		min-width: 0px;
+		margin-right: 0.5rem;
+	}
+}
+
+.MuiListItemText-root {
+	margin-top: 0.1875rem;
+	margin-bottom: 0.1875rem;
+
+	.MuiListItemText-primary {
+		font-size: inherit;
+	}
+	.MuiListItemText-secondary {
+		color: inherit;
+		font-size: smaller;
+		opacity: 0.6;
+	}
+}

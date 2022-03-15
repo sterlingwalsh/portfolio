@@ -1,0 +1,16 @@
+.simple__table__wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.simple__table {
+	width: 100%;
+	height: 100%;
+	th {
+		border-bottom: 1px solid rgba($light, 0.2);
+		border-top: none;
+		position: sticky;
+		top: 0;
+	}
+}

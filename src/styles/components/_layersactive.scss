@@ -1,0 +1,10 @@
+.layers__active__title {
+	margin-bottom: 0.5rem;
+}
+
+.layers__button__group {
+	// pointer-events: none;
+	& * {
+		// pointer-events: auto;
+	}
+}

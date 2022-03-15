@@ -1,0 +1,134 @@
+.search-container {
+	position: absolute;
+	display: inline-block;
+	flex-wrap: nowrap;
+	top: 106px;
+	left: 72px;
+	background-color: rgba($white, 1) !important;
+	width: 405px;
+	overflow: auto;
+}
+
+.search-node-menu.MuiPaper-root,
+.search-node-menu .MuiPaper-root {
+	box-shadow: $dropshadow;
+	background-color: rgba($black, 0.85) !important;
+	border-width: 0.1rem !important;
+	border-color: rgba($white, 1) !important;
+	color: $white;
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+	height: 100% !important;
+	.MuiMenuItem-root {
+		&:hover {
+			background: rgba($blue, 0.1);
+		}
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: rgba($cyan, 0.85) !important;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: rgba($white, 0.85);
+	}
+
+	.MuiAutocomplete-listbox {
+		outline-color: $white;
+		outline-width: 3px;
+		margin: 0;
+		padding: 0px 0;
+		overflow: auto;
+		list-style: none;
+		max-height: 60vh;
+		.MuiAutocomplete-option {
+			outline: auto;
+			outline-style: solid;
+			outline-width: thin;
+			outline-color: rgba($white, 0.75);
+			&:hover {
+				background-color: rgba($cyan, 0.75) !important;
+			}
+		}
+		.MuiInputLabel-filled {
+			color: $black !important;
+		}
+	}
+
+	[aria-selected='true'] {
+		background-color: rgba($cyan, 0.75);
+	}
+}
+
+.search-node-input .MuiFormControl-root.styled__input {
+	label {
+		color: $black;
+	}
+	.MuiFilledInput-root {
+		background-color: rgba($white, 1);
+		min-width: 7.5rem;
+		border-radius: 0 !important;
+		color: $black;
+	}
+}
+
+.search-node-button-expanded {
+	width: 3rem !important;
+	height: 3rem !important;
+	border-radius: unset !important;
+	opacity: 1 !important;
+	background-color: $black !important;
+	border-color: $white !important;
+}
+
+.search-node-button {
+	width: 3rem !important;
+	height: 3rem !important;
+	opacity: 0.3;
+	border-radius: unset !important;
+	transition: all $transition-duration-short $transition-timing;
+	background-color: transparent !important;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.facility-search-auto-complete {
+	margin-right: 3rem;
+	background-color: $black;
+	border: 1px solid rgba($light, 0.3);
+	height: 1.5rem !important;
+}
+
+.modal_header_slim {
+	height: 2rem;
+	border-radius: 0rem;
+}
+
+.facility-search-button {
+	background-color: $gray-700;
+	width: 31px;
+	cursor: pointer;
+	height: 31px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.expand_collapse_input {
+	overflow: hidden;
+	width: 0px;
+	//border:1px solid rgba($light, 0.3);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all $transition-duration $transition-timing;
+}
+
+.expand_collapse_input-expanded {
+	width: 300px;
+	padding-right: 15px;
+}
+
+.autocomplete-expanded {
+	width: 300px;
+}

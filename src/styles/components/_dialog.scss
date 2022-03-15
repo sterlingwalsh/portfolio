@@ -1,0 +1,20 @@
+.dialog {
+	&.hide {
+		display: none;
+	}
+
+	h2,
+	label {
+		color: #ced4da;
+	}
+
+	[role='dialog'] {
+		padding-bottom: 1rem;
+		background-color: #161c2b !important;
+	}
+
+	.form-group {
+		margin: 0 1rem 1rem 1rem;
+		min-width: 16rem;
+	}
+}

@@ -1,0 +1,204 @@
+.withnavbar__root {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-link {
+	border-radius: 0 !important;
+	padding: 0.25rem 0.75rem;
+}
+
+.navbar {
+	flex-grow: 0;
+	box-shadow: $black 0px 5px 8px -5px;
+	padding: 0rem 1rem;
+	z-index: 1;
+}
+
+.navbar.bg-dark {
+	background-color: transparentize($color: $dark, $amount: 0.125);
+}
+
+.navbar__app__icon {
+	height: 3.333rem;
+}
+
+.nav-link.active {
+	background: none !important;
+	border-bottom: 1px dotted $info;
+	// text-decoration: underline;
+	// color: $gray-900 !important;
+}
+
+.nav-pills {
+	.nav-item:not(:last-child) {
+		margin-right: $spacer / 2;
+	}
+}
+
+.navbar-component-wrapper {
+	flex-grow: 1;
+	flex-basis: 0px;
+	width: 100%;
+	position: relative;
+	min-height: 0px;
+}
+
+.header__branding {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	font-size: 1.25rem;
+	img {
+		margin: 0.5rem 0.5rem 0.5rem 0rem;
+	}
+}
+
+.header__item.MuiButtonBase-root,
+a.header__item {
+	height: 100%;
+	padding: 0.5rem 1rem;
+	position: relative;
+	color: rgba($light, 0.75);
+	transition: all $transition-duration $transition-timing;
+	&::before {
+		position: absolute;
+		transition: all $transition-duration $transition-timing;
+		background: linear-gradient(to right, #00000000, rgba($light, 0.1) 2%, rgba($light, 0.1) 98%, #00000000);
+		opacity: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+	}
+	&:hover {
+		color: $light;
+		&::before {
+			opacity: 1;
+		}
+	}
+	&[aria-selected='true'] {
+		color: $light;
+	}
+	.info__icon__container {
+		padding-right: 0rem;
+	}
+}
+
+.header__item__content {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.header__menu__container {
+	margin-left: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.header__drawer {
+	.MuiPaper-root {
+		background-color: transparentize($color: $dark, $amount: 0.125);
+		overflow: unset;
+	}
+}
+
+.header__drawer__item {
+	font-size: 1.1rem;
+	& > .header__item {
+		padding: 1rem 2rem;
+		width: 100%;
+	}
+}
+
+.header__map__item {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.header__map__text {
+	margin-right: 0.5rem;
+}
+
+.header__map__switch {
+	--opt1: '2D';
+	--opt2: '3D';
+	pointer-events: all;
+	cursor: pointer;
+	&.MuiSwitch-root {
+		height: 1.5rem;
+		width: 3rem;
+		display: flex;
+		align-items: center;
+		padding: 0rem;
+		overflow: visible;
+	}
+	.MuiSwitch-switchBase {
+		top: unset;
+		&.Mui-checked {
+			&.MuiButtonBase-root {
+				color: $blue;
+			}
+			& + .MuiSwitch-track {
+				opacity: 1;
+				background-color: rgba($blue, 0.5);
+			}
+			.MuiSwitch-input {
+				left: -1rem;
+			}
+		}
+		&.MuiButtonBase-root {
+			color: $blue;
+		}
+		.MuiIconButton-label {
+			align-items: center;
+			.MuiSwitch-thumb {
+				width: 1.333rem;
+				height: 1.333rem;
+			}
+		}
+		.MuiSwitch-input {
+			height: 1.5rem;
+			width: 3rem;
+			top: unset;
+			left: calc(0.75rem - 0.325rem);
+		}
+	}
+
+	& > .MuiButtonBase-root {
+		margin-left: calc(0.125rem - 9px);
+		transform: translateX(0%);
+		&.Mui-checked {
+			//less padding
+			transform: translateX(calc(100% - 18px));
+		}
+	}
+
+	.MuiSwitch-track {
+		border-radius: 9999px;
+		background-color: rgba($blue, 0.5);
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		opacity: 1;
+
+		&::before,
+		&::after {
+			line-height: 1;
+			color: $light;
+			margin-bottom: 0.125rem;
+		}
+		&::before {
+			content: var(--opt1);
+		}
+		&::after {
+			content: var(--opt2);
+		}
+	}
+}

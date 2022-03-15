@@ -1,0 +1,16 @@
+.navbar-indexed-styled {
+	z-index: 1 ;
+    background-color : $gray-900 ;    
+    justify-content: space-between ;
+    display: inline-flex ;
+}
+
+.toolbar_menu__item {
+    & .MuiMenu-paper {
+        border: 1px solid rgba($light, 0.45);
+    }
+    & .MuiMenu-paper {
+        color: rgba($light, 0.75);     
+        background: $dark;
+    }
+}

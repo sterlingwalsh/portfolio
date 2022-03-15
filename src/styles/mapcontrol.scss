@@ -1,0 +1,75 @@
+
+.map-control.card {
+    width: 300px;
+    position:absolute;
+    top: 70px;
+    bottom: 0;
+    left: -300px;
+    z-index: 1000;
+    transition: left ease-in-out 500ms;
+    border-radius: 0;
+
+    &.show {
+        left: 0;
+        z-index: 1001;
+
+        & > div.toggle {
+            color: white;
+        }
+    }
+
+    & >  div.toggle {
+        position: absolute;
+        right:-40px;
+        height:40px;
+        width:40px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: rgba(256, 256, 256, .7);
+        padding: 10px;
+        cursor: pointer;
+
+        &.basemap {
+            top: 140px;
+        }
+        &.available-layers {
+            top: 190px;
+        }
+        &.added-layers {
+            top: 240px;
+        }
+        &.tools {
+            top: 290px;
+        }
+    }
+
+    & > .panel {
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0;
+
+
+        & > ul {
+            & > li {
+                background-color: white;
+                color:black;
+                cursor: pointer;
+
+                & > img {
+                    width: 100%;
+                    margin: 10px 0;
+                    border: 1px solid black;
+                }
+
+                &.selected {
+                    background-color: rgba(256, 256, 256, .5);
+                    font-weight:bold;  
+                    
+                    & > img {
+                        border-width: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

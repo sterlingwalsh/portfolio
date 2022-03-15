@@ -1,0 +1,35 @@
+.styled__radio__group.MuiFormGroup-root {
+	display: grid;
+	// flex-direction: row;
+	gap: 0.5rem;
+	grid-template-columns: repeat(auto-fit, min-content);
+	.MuiFormControlLabel-root {
+		min-width: fit-content;
+		margin: 0px;
+	}
+}
+
+.radio__inherit,
+.radio__inherit.MuiRadio-root {
+	color: inherit;
+}
+
+.radio__action,
+.radio__action.MuiRadio-root {
+	color: $cyan;
+}
+
+.radio__warning,
+.radio__warning.MuiRadio-root {
+	color: $orange;
+}
+
+.radio__danger,
+.radio__danger.MuiRadio-root {
+	color: $red;
+}
+
+.radio__secondary,
+.radio__secondary.MuiRadio-root {
+	color: $light;
+}

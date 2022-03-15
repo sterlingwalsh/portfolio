@@ -1,0 +1,124 @@
+@keyframes windowMinimize {
+	0% {
+		height: inherit;
+	}
+
+	100% {
+		height: 0px;
+	}
+}
+
+.window {
+	height: 100%;
+	opacity: 0.95;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: transparent;
+	box-shadow: $dropshadow;
+	overflow: hidden;
+	backdrop-filter: blur(3px);
+}
+
+.window.window__overflow__visible {
+	overflow: visible;
+	.window__content__container,
+	.window__content,
+	.window__content.window__content__no_scroll {
+		overflow: visible;
+	}
+}
+
+.window__header {
+	cursor: move;
+	display: flex;
+	justify-content: space-between;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+	border-bottom: 1px solid rgba($light, 0.3);
+	background-color: rgba($gray-900, 0.9);
+	color: $light;
+	flex-grow: 0;
+	flex-shrink: 0;
+	.MuiButtonGroup-root.window__actions {
+		flex: 0;
+		button {
+			border-right: none;
+		}
+
+		svg {
+			fill: $light;
+		}
+	}
+}
+
+.window__title {
+	flex: 1;
+	padding: 0.5rem;
+	padding-left: 1rem;
+	min-width: 0px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	& > * {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	:not(:first-child) {
+		margin-left: 0.25rem;
+	}
+}
+
+.window__header__slim {
+	.window__title {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		padding-left: 0.75rem;
+		h6 {
+			font-size: 1.15rem;
+		}
+	}
+}
+
+.window__content__container {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	flex-grow: 1;
+	flex-shrink: 1;
+	& .window__content {
+		background-color: $dark-transluscent;
+		backdrop-filter: blur(3px);
+		transition: all 0.3s ease-in-out;
+		padding: 1rem;
+		// top: 0%;
+		width: 100%;
+		height: 100%;
+		// position: absolute;
+		overflow: auto;
+		&.window__scroll__padding {
+			overflow-y: scroll;
+		}
+		&.window__content__no_scroll {
+			overflow: hidden;
+		}
+		&.window__contant__no_padding {
+			padding: 0;
+		}
+	}
+	// transition:
+}
+
+.windows-provider-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+	* {
+		pointer-events: all;
+	}
+}

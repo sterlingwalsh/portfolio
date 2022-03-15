@@ -1,0 +1,93 @@
+.graph_tooltip {
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: rgb(48, 46, 46);
+    text-align: center;  
+    box-shadow: $dropshadow;
+    pointer-events: none;
+
+    &[x-placement*='bottom'] { 
+        margin-top: 1rem;
+        .info__popper__arrow {
+            top: 0;
+            left: 0;
+            margin-top: -0.9em;
+            width: 3em;
+            height: 1em;
+            &::before {
+                border-width: 0 1em 1em 1em;
+                border-color: transparent transparent $dark transparent;
+            }
+        }
+	}
+	&[x-placement*='top'] { 
+        margin-bottom: 1rem;
+        .info__popper__arrow {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -0.9em;
+            width: 3em;
+            height: 1em;
+            &::before {
+                border-width: 1em 1em 0 1em;
+                border-color: $dark transparent transparent transparent;
+            }
+        }
+	}
+	&[x-placement*='right'] {
+        margin-left: 1rem;
+        .info__popper__arrow {
+            left: 0;
+            margin-left: -0.9em;
+            height: 3em;
+            width: 1em;
+            &::before {
+                border-width: 1em 1em 1em 0;
+                border-color: transparent $dark transparent transparent;
+            }
+        }
+	}
+	&[x-placement*='left'] {
+        margin-right: 1rem;
+        .info__popper__arrow {
+            right: 0;
+            margin-right: -0.9em;
+            height: 3em;
+            width: 1em;
+            &::before {
+                border-width: 1em 0 1em 1em;
+                border-color: transparent transparent transparent $dark;
+            }
+        }
+	}
+  }
+
+  
+  .graph_tooltip-content {    
+    position: relative;    
+    background-color: $dark; //todo
+    z-index: 1;    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    color: $light;   
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0.25rem 0.5rem;    
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;  
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;    
+  }
+
+  
+  .graph_tooltip-content-text {       
+    display: flex;
+  }
+
+  .graph_tooltip-content-subtext {    
+    justify-content: center;     
+  }
+  

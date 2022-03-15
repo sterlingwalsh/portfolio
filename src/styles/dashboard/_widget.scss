@@ -1,0 +1,160 @@
+.widget__column {
+	margin-bottom: $spacer;
+}
+.widget__tile {
+	// background-color: transparentize($color: $dark, $amount: 0.175);
+	// backdrop-filter: blur(3px);
+	background: $dark;
+	box-shadow: #01031f 0px 7px 28px -5px;
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+}
+
+.widget__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-grow: 0;
+}
+
+.widget-draggable-handle {
+	cursor: move;
+}
+
+.widget__header__text__wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	padding: 0.5rem 0rem;
+}
+
+.widget__header__text {
+	font-size: 1.25rem;
+	padding-left: 1rem;
+}
+
+.widget__body {
+	flex-grow: 1;
+	position: relative;
+	padding: 0.5rem;
+}
+
+.widget__buttons {
+	position: absolute;
+	top: $spacer / 2;
+	right: $spacer / 2;
+}
+
+.widget__settings {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	background-color: transparentize($color: $dark, $amount: 0.175);
+	backdrop-filter: blur(3px);
+	opacity: 0.975;
+	overflow: auto;
+	padding: $spacer / 2;
+	transition: all 0.175s ease-out;
+	transition-property: height, opacity;
+}
+
+.widget__settings--hidden {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.widget__settings--visible {
+	height: 100%;
+	opacity: 1;
+	overflow: auto;
+}
+
+//WYSIWYGEditor
+.editor {
+	margin: 10px;
+	border: 1px solid rgb(215, 215, 215);
+
+	.rdw-editor-main {
+		padding: 0 20px 10px;
+	}
+}
+
+.placeholder-ul {
+	visibility: hidden;
+}
+.placeholder-li:hover {
+	background: $white;
+	//color: $dark;
+}
+.rdw-dropdownoption-default {
+	color: $dark;
+}
+.placeholder-li {
+	color: $dark;
+}
+
+/*
+* dashboard slide out blade overlay
+*/
+.widget-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #01031f;
+	opacity: 0.45;
+	z-index: 250;
+}
+
+.widget_library__row {
+	padding-left: 1rem;
+	display: flex;
+
+	& > *:not(:first-child()) {
+		margin-left: 10rem;
+	}
+
+	& .MuiListItemIcon-root {
+		color: inherit;
+	}
+}
+
+.dashboard__widget__message {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+.dashboard__widget__message__icon {
+	max-width: 50%;
+	min-width: 2rem;
+}
+
+.dashboard__widget__message__icon__title {
+	text-align: center;
+}
+
+.dashboard__widget__message__icon__body {
+	text-align: center;
+}
+
+.map_widget_loading {
+	position: 'fixed';
+	bottom: 32;
+	right: 32;
+	z-index: 5000;
+}
+
+.legend__widget__body__scroll__wrapper {
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}

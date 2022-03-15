@@ -1,0 +1,40 @@
+.icon__library__modal__body {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+}
+.icon__library__modal__input {
+	flex-grow: 0;
+}
+
+.icon__library__modal__list {
+	flex-grow: 1;
+	flex-basis: 0px;
+	overflow: auto;
+}
+
+.icon__library__virtual__container {
+	--itemSize: 6rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, var(--itemSize));
+	justify-content: space-evenly;
+}
+
+.icon__library__item__container {
+	height: var(--itemSize);
+	width: var(--itemSize);
+}
+
+.icon__library__item.MuiButtonBase-root {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&[aria-selected='true'] {
+		border: 1px solid rgba($light, 0.5);
+	}
+}

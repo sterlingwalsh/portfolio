@@ -1,0 +1,103 @@
+.tools__services__list {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+	justify-content: space-evenly;
+	gap: 0.5rem;
+
+	.basemapCard {
+		background: rgba($gray-900, 0.9);
+	}
+
+	&.list__wide {
+		grid-template-columns: repeat(auto-fit, minmax(rem, 1fr));
+	}
+}
+
+.esri__card__label {
+	padding: 0.5rem 0.5rem 0rem 0.5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+}
+
+.toolpage {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.toolpage__header {
+	flex-grow: 0;
+	flex-shrink: 0;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	border-bottom: 1px solid rgba($light, 0.3);
+	padding-bottom: 0.5rem;
+}
+
+.toolpage__title {
+	font-size: 2rem;
+}
+
+.toolpage__body {
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-height: 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.toolpage__body__wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	flex: 1;
+}
+
+.toolpage__body__scroll {
+	flex: 1;
+	min-height: 0px;
+	overflow: auto;
+}
+
+.toolpage__body__padding {
+	padding: 0.5rem;
+}
+
+.toolpage__footer {
+	border-top: 1px solid rgba($light, 0.3);
+	flex: 0;
+	padding-top: 0.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	& > *:not(:first-child) {
+		margin-left: 0.5rem;
+	}
+}
+
+.hidden__submit {
+	width: 0;
+	height: 0;
+	position: absolute;
+	opacity: 0;
+}
+
+.row_items {
+	flex: 0;
+	padding-top: 0.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start; 
+	& > *:not(:first-child) {
+		margin-left: 0.5rem;
+	}
+}
+

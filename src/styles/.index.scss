@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,900;1,200;1,400;1,900&display=swap');
+
+@import 'variables';
+@import 'mixins';
+
+@import 'mapcontrol';
+@import 'toggle';
+@import 'components/basemaps';
+@import 'components/basemap';
+@import 'components/errors';
+
+@import 'components/header';
+
+@import './components/loading';
+@import './components/form';
+@import './components/window';
+@import './components/tabs';
+@import './components/datagrid';
+@import './components/tooltips';
+
+@import './components/splitpane';
+@import './components/buttons';
+@import './components/info';
+@import './components/select';
+@import './components/graph';
+@import './components/accordion';
+@import './components/layersfilters';
+@import './components/uploadfile';
+@import './components/alerts';
+@import './components/layersactive';
+@import './components/dialog';
+@import './components/zoomscale';
+@import './components/print';
+@import './components/toolbox';
+
+@import './components/ncf';
+@import './components/tools';
+@import './components/menu';
+@import './components/dropdown';
+@import './components/modal';
+@import './components/checkbox';
+@import './components/autocomplete';
+@import './components/input';
+@import './components/table';
+@import './components/radio';
+@import './components/toolbar';
+@import './components/graph_tooltip';
+@import './components/confirm';
+@import './components/pyramid';
+@import './components/search';
+@import './components/slidermenu';
+@import './components/slider';
+@import './dashboard/toolbar';
+@import './dashboard/list';
+@import './dashboard/group';
+@import './components/layerslider';
+@import './components/chip';
+
+//Pages
+@import './pages/map-page';
+
+//
+// Generic
+// --------------------
+
+*:not(.spinner-*) {
+    border-radius: 0 !important;
+}
+
+@media print {
+    @page {
+        size: legal landscape;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    @include scrollbars(1rem, $primary, transparent);
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: $black;
+    @include scrollbars(0.333rem, $primary, transparent);
+}
+
+// fieldset {
+// 	&:not(.MuiOutlinedInput-notchedOutline) {
+// 		background-color: $gray-900;
+// 		border: 1px dashed $gray-600;
+// 		border-radius: 2px;
+// 		margin-bottom: 0.75rem;
+// 		padding: 1rem 0.75rem;
+
+// 		&:not(:first-child) {
+// 			margin-top: 1.25rem;
+// 		}
+
+// 		legend {
+// 			color: $light;
+// 			font-size: $font-size-base * 0.85;
+// 			font-weight: 600;
+// 			letter-spacing: 0.1rem;
+// 			padding-bottom: 0.25rem;
+// 			padding-left: 0.25rem;
+// 			text-transform: uppercase;
+// 			width: auto;
+// 		}
+
+// 		input.form-control,
+// 		select.form-control,
+// 		select.custom-select {
+// 			border-color: $gray-600;
+// 		}
+
+// 		.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+// 			border-color: $gray-600;
+// 		}
+// 	}
+
+// 	&.MuiOutlinedInput-notchedOutline {
+// 		border-color: $gray-600;
+// 	}
+// }
+
+.list-group-item {
+    input.form-control,
+    select.form-control,
+    select.custom-select {
+        border-color: $gray-600;
+    }
+}
+
+/*
+* form override
+*/
+.form-control {
+    color: $light !important; // #fff;
+    background-color: $dark !important; //#0b1120
+}
+
+//
+// ESRI Overrides
+// -------------------
+.esri-view-surface:after {
+    outline: none !important;
+}
+.esri-component {
+    box-shadow: $black 0px 5px 20px -5px !important;
+}
+
+.esri-component.esri-attribution.esri-widget {
+    background: #00000059;
+    color: #bbb;
+    font-family: monospace;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.esri-widget,
+.esri-input,
+.esri-menu,
+.esri-widget--button {
+    background-color: transparentize($color: $dark, $amount: 0.175) !important;
+    backdrop-filter: blur(3px);
+}
+
+.esri-heatmap-slider-div-outer {
+    background-color: transparentize($color: $dark, $amount: 0.175) !important;
+}
+
+.esri-legend--card {
+    display: contents !important;
+}
+//
+// Bootstrap Overrides
+// --------------------
+
+//
+// Layout
+//
+
+.container-fluid {
+    @include scrollbars(1rem, $primary, transparent);
+}
+
+.row {
+    margin-bottom: $spacer / 2;
+}
+
+.bold {
+    font-weight: bold;
+}
+//
+// Accordion
+//
+.accordion > .card > .card-header {
+    cursor: pointer;
+}
+
+//
+// Button
+//
+.btn,
+.button {
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &.btn-link:hover {
+        text-decoration: none;
+    }
+}
+
+//
+// Card
+//
+.card {
+    // border: 1px dashed $gray-700;
+    border: none;
+    box-shadow: $black 0px 5px 20px -5px;
+
+    .card-header {
+        border-bottom: 1px dotted $gray-600;
+    }
+
+    .card-body {
+        background-color: transparentize($color: $dark, $amount: 0.175) !important;
+        padding: 0.75rem;
+    }
+
+    .card-footer {
+        border-top: 1px dotted $gray-600;
+    }
+}
+
+//
+// Tabs
+//
+.nav-tabs {
+    .nav-link:not(.disabled) {
+        color: $light;
+
+        &.active {
+            background-color: $info !important;
+            border-bottom: 1px dotted $gray-900;
+            color: $gray-800;
+        }
+    }
+
+    .nav-link.disabled {
+        color: $gray-600;
+        text-decoration: line-through;
+    }
+}
+
+.tab-content {
+    min-height: 4rem;
+    padding: 0.75rem;
+    position: relative;
+}
+
+//
+// Modal
+//
+.modal-header .close {
+    padding: 0;
+}
+
+//
+//  App Styles
+// --------------------
+@import 'animations';
+
+@import 'dashboard/widgetLibrary';
+@import 'dashboard/widget';
+@import 'dashboard/chart';
+@import 'dashboard/indicator';
+@import 'dashboard/dashboard';
+@import 'dashboard/grids';
+@import 'dashboard/iconLibrary';
+
+.wrapper {
+    // padding: $spacer;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: $spacer;
+    right: $spacer;
+}
+
+.close--smaller {
+    top: $spacer / 2;
+    right: $spacer / 2;
+}
+
+.login--backgroundmap {
+    background-color: #070928;
+
+    .esri-view-root {
+        opacity: 0;
+    }
+
+    &.login--backgroundmap-loaded {
+        .esri-view-root {
+            animation: blurIn 4s ease-in, fadeIn 3s ease-in;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+.input-range {
+    //margin-top: -1px;
+    margin-bottom: 16px;
+}
+
+.input-range__slider {
+    background-color: #0471f5 !important;
+    background: #fff;
+    border: 6px solid #0471f5 !important;
+}
+.input-range__track--active {
+    background-color: #0471f5 !important;
+}
+
+// .input-range__label--bottom-min .prefix-text, .input-range__label--bottom-max .prefix-text {
+//     /* color: #444 !important; */
+//     margin-right: 150px !important;;
+//     /* font-size: 14px !important; */
+// }
+
+// .input-range__label--min, .input-range__label--max {
+//     bottom: -1.4rem !important;
+//     position: absolute !important;
+// }
+
+// .rc-tooltip { z-index: 1500 !important; }
+.rc-tooltip {
+    z-index: n !important;
+}
+
+.layerCardContent {
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+.toast__toast-body__toast-component {
+    h5 {
+        margin-bottom: $spacer / 4;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+    p {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+}
+
+#window-tabularfeatures-tabs-container {
+    .tab-content {
+        height: 90%;
+
+        & > * {
+            height: 100%;
+        }
+    }
+}
+
+//Fix for overlay
+.list-group-item-action:hover,
+.list-group-item-action:focus {
+    color: white;
+}
+
+textarea.form-control {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+// .dropdown .dropdown-menu {
+//     //background:transparent !important;
+// }
+
+.navbar-indexed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    z-index: 2 !important;
+    box-shadow: $dropshadow;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-break {
+    width: 100%;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.flex-column-break {
+    width: 0px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.info-label {
+    // Allow labels to use `margin` for spacing.
+    display: inline-block;
+    // margin-bottom: $label-margin-bottom;
+    color: white !important;
+}
+.hover__underline {
+    .hover__underline__target {
+        position: relative;
+        &::after {
+            position: absolute;
+            bottom: 0px;
+            content: '';
+            width: 0%;
+            height: 1px;
+            background-color: currentColor;
+            transition: all $transition-duration $transition-timing;
+            left: 50%;
+        }
+    }
+    &:hover:not(.active__only),
+    &.underline__active,
+    &[aria-selected='true'] {
+        .hover__underline__target {
+            &::after {
+                width: 100%;
+                left: 0%;
+            }
+        }
+    }
+}
+
+.clean-link {
+    color: currentColor;
+    text-decoration: none;
+    &:hover {
+        color: currentColor;
+        text-decoration: none;
+    }
+}
+
+.grid-columns {
+    --colWidth: 14rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--colWidth), 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
+}
+
+.color__inherit {
+    color: inherit;
+}
+
+.color__action {
+    color: $cyan;
+}
+
+.color__warning {
+    color: $orange;
+}
+
+.color__danger {
+    color: $red;
+}
+
+.color__secondary {
+    color: $green;
+}
+
+.color__tertiary {
+    color: $orange;
+}
+
+.color__light-purple {
+    color: $light-purple;
+}
+
+.color__white {
+    color: $white;
+}
+
+.border__match {
+    border-color: currentColor;
+}
+
+.MuiDivider-root.divider-override {
+    background-color: currentColor;
+    opacity: 0.12;
+}
+
+.section__title {
+    font-size: larger;
+    border-bottom: 1px solid currentColor;
+}
+
+body {
+    .rcp-dark {
+        --rcp-background: #161c2b;
+    }
+    .rcp-fields {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}

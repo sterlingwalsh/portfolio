@@ -1,0 +1,54 @@
+.dropdown {
+}
+
+.dropdown__container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.dropdown__icon.MuiButtonBase-root {
+	padding: 0.75rem;
+	border-radius: 999px;
+}
+
+.dropdown__help_icon {
+	transition: all $transition-duration-short $transition-timing;
+}
+
+.dropdown__menu {
+	z-index: 1;
+	.styled__menu {
+		// transform-origin: left top;
+	}
+	&.MuiMenuItem-root {
+		width: 100%;
+		.dropdown__menu__item__content {
+			color: $light;
+			position: relative;
+			&::after {
+				position: absolute;
+				bottom: 0px;
+				content: '';
+				width: 0%;
+				height: 1px;
+				background-color: currentColor;
+				transition: all $transition-duration $transition-timing;
+				left: 50%;
+			}
+		}
+
+		&.Mui-selected {
+			.dropdown__menu__item__content {
+				&::after {
+					width: 100%;
+					left: 0%;
+				}
+			}
+		}
+	}
+	.MuiTypography-colorTextSecondary {
+		color: rgba($light, 0.75);
+	}
+}

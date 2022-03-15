@@ -1,0 +1,60 @@
+.pyramid__container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	z-index: 0;
+}
+
+.pyramid__section {
+	width: 100%;
+	height: calc(100% / var(--section-count));
+	z-index: 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform $transition-duration $transition-timing;
+	.pyramid__section__content {
+		text-align: center;
+		z-index: 1;
+		height: 100%;
+	}
+	&:hover {
+		transition: transform $transition-duration $transition-timing;
+		z-index: 1;
+		transform: scale(calc(1 + calc(0.03 * calc(var(--section-count) - var(--section-index)))));
+		& + .pyramid__section {
+			z-index: 0;
+		}
+	}
+	svg {
+		z-index: 0;
+		position: absolute;
+		width: 100%;
+		polygon {
+		}
+		.pyramid__section__fill {
+		}
+		.pyramid__section__stroke {
+			stroke-width: 0.5px;
+			fill: none;
+		}
+	}
+}
+
+// .pyramid__section__border,.pyramid__section__background {
+//     border-left-color: transparent;
+//     border-right-color: transparent;
+//     border-style: solid;
+//     border-ra
+// }
+
+// .pyramid__section__border {
+//     width: 0px;
+//     height: 0px;
+//     border
+// }
+
+// .pyramid__section__background {
+// }

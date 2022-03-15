@@ -1,0 +1,126 @@
+.graph-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	.chart-container {
+		flex: 1;
+		min-width: 0px;
+		position: relative;
+		.ncf-chart {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// .esri-popup__main-container {
+	// 	position: absolute;
+
+	// 	&.esri-popup-opaque {
+	// 		opacity: 0.6;
+	// 		transition: opacity $transition-duration $transition-timing;
+	// 	}
+	// }
+
+	.graph-menu {
+		position: absolute;
+		top: 10;
+		right: 10px;
+		display: flex;
+		flex-direction: column;
+
+		& > * {
+			margin-bottom: 8px;
+		}
+
+		& > .graph-layout {
+			position: relative;
+		}
+
+		& > .graph-size {
+			position: relative;
+		}
+
+		& > .graph-filter {
+			position: relative;
+		}
+
+		& > .graph-download {
+			position: relative;
+		}
+	}
+}
+
+.graph-popup {
+	opacity: 0.6;
+	transition: opacity $transition-duration $transition-timing;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.esri-popup__main-container.esri-widget {
+	.esri-popup__button {
+		max-width: unset;
+		&:hover {
+			background-color: rgba($light, 0.2);
+		}
+	}
+}
+
+.graph__button__row {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	opacity: 0.3;
+	transition: all $transition-duration-short $transition-timing;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.graph__tabs__collapse__button {
+	background-color: rgba($gray-900, 0.9);
+	border-width: 1px;
+	border-color: rgba($light, 0.5);
+	border-bottom-width: 0px;
+}
+
+.facility__search__modal__body {
+	display: flex;
+}
+
+.facility__search__content {
+	width: 100%;
+	padding: 0rem 0.5rem;
+}
+.facility__search__scroller {
+	width: 100%;
+	overflow: auto;
+}
+
+.graph-image-scale {
+	overflow: hidden;
+	display: flex;
+	align-items: stretch;
+	box-sizing: border-box;
+	max-width: 100%;
+
+	.MuiSlider-markLabel {
+		color: white;
+	}
+
+	.graph-image-slider {
+		padding-left: 0.75rem;
+		padding-right: 1.75rem;
+		width: 100%;
+	}
+
+	.graph-image-scale-value {
+		width: 3rem;
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+}

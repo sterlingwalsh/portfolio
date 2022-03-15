@@ -1,0 +1,15 @@
+.error.error--dismissed {
+	text-align: center;
+}
+
+.error__actions {
+	margin-bottom: 1rem;
+}
+
+.error__code {
+	color: #a57979;
+
+	& pre {
+		max-height: 10rem;
+	}
+}
