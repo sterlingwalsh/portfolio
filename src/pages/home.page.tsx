@@ -55,7 +55,7 @@ export const Home: React.FC = () => {
                     <section>
                         <h4>Highlighted Projects</h4>
                         <article>
-                            <img src={process.env.PUBLIC_URL + '/images/RA-map.jpg'} />
+                            <img src={process.env.PUBLIC_URL + '/images/RA-map.jpg'} alt='risk architecture map' />
                             <div>
                                 <h5>Risk Architecture</h5>
                                 <ul>
@@ -66,7 +66,7 @@ export const Home: React.FC = () => {
                             </div>
                         </article>
                         <article>
-                            <img src={process.env.PUBLIC_URL + '/images/sti-table.jpg'} />
+                            <img src={process.env.PUBLIC_URL + '/images/sti-table.jpg'} alt='shipment trackers table' />
                             <div>
                                 <h5>Shipment Trackers</h5>
                                 <ul>
@@ -76,7 +76,7 @@ export const Home: React.FC = () => {
                             </div>
                         </article>
                         <article>
-                            <img src={process.env.PUBLIC_URL + '/images/plw-map.jpg'} />
+                            <img src={process.env.PUBLIC_URL + '/images/plw-map.jpg'} alt='p l weaver map' />
                             <div>
                                 <h5>Agri-Logistics</h5>
                                 <ul>
