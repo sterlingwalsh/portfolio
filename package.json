@@ -2,7 +2,7 @@
     "name": "portfolio2",
     "version": "0.1.0",
     "private": false,
-    "homepage": "https://sterlingwalsh.github.io/portfolio2",
+    "homepage": "https://sterlingwalsh.github.io/portfolio",
     "dependencies": {
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",

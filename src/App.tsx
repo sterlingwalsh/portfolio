@@ -8,7 +8,7 @@ import { Home } from './pages/home.page';
 function App() {
     return (
         <ConfirmProvider>
-            <BrowserRouter basename='/portfolio2'>
+            <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/portfolio2' : '/'}>
                 <Routes>
                     <Route path='/'>
                         <Route index element={<Home />} />
